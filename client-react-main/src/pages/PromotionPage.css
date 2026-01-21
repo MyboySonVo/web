@@ -1,0 +1,82 @@
+.promotion-page-background {
+  background-color: #0e1117;
+  padding: 48px 24px; 
+  min-height: calc(100vh - 80px); 
+  position: relative;
+  top:1px;
+  
+}
+.promotion-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.promo-card {
+    width: 356px;
+    height: 350px;
+    display: inline-block;
+    margin-left: -60px;
+    padding : 4px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    
+    
+}
+
+.promotion-grid {   
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0px 24px;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+
+.pagination-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary, #8e8e8e);
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.pagination-btn:hover {
+  color: var(--text-primary, #e0e0e0);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .promotion-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .promotion-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .promotion-grid {
+    grid-template-columns: 1fr;
+  }
+}

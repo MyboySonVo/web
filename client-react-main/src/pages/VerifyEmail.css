@@ -1,0 +1,162 @@
+/* 🎨 Font & Reset */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* 🌌 Container chính */
+.verify-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  transition: background 0.5s ease;
+}
+
+/* 🎭 Các trạng thái */
+.verify-container.loading {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+.verify-container.success {
+  background: radial-gradient(circle at center, #10b981, #065f46);
+}
+
+.verify-container.error {
+  background: radial-gradient(circle at center, #ef4444, #7f1d1d);
+}
+
+/* 🎴 Khung hiển thị */
+.verify-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 460px;
+  width: 90%;
+  animation: fadeInUp 1s ease;
+}
+
+/* 🎆 Pháo hoa hiệu ứng khi xác minh thành công */
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  animation: explode 1.5s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes explode {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translate(
+      calc(100px - 200px * var(--x)),
+      calc(100px - 200px * var(--y))
+    );
+  }
+}
+
+/* 🌀 Icon trạng thái */
+.verify-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  animation: bounce 1.5s infinite;
+}
+
+.verify-icon.success {
+  color: #34d399;
+}
+
+.verify-icon.error {
+  color: #f87171;
+}
+
+.verify-icon.loading {
+  color: #60a5fa;
+  animation: spin 1.2s linear infinite;
+}
+
+/* 🧾 Văn bản hiển thị */
+.verify-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  animation: fadeIn 1.2s ease both;
+}
+
+.verify-sub {
+  font-size: 1rem;
+  color: #cbd5e1;
+  animation: fadeIn 1.5s ease both;
+}
+
+/* 🔘 Nút hành động (ví dụ “Quay lại trang chủ”) */
+.verify-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: #2563eb;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.verify-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* 🌈 Hiệu ứng animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

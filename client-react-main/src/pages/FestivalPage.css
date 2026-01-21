@@ -1,0 +1,146 @@
+.festival-page-wrapper {
+background-color: var(--bg-dark, #0d0d0d);
+color: var(--text-primary, #e0e0e0);
+padding-top: 80px;
+}
+
+/* --- BANNER --- */
+.festival-banner-wrapper {
+width: 100%;
+height: 810px;
+background-image: url('https://files.catbox.moe/l2ce1t.png');
+background-size: cover;
+background-position: center;
+display: flex;
+align-items: center;
+padding: 0 24px;
+}
+
+.festival-banner-content {
+max-width: 1200px;
+width: 100%;
+margin: 0 auto;
+position: relative;
+color: white;
+}
+
+/* --- DANH SÁCH BÀI VIẾT --- */
+.festival-list-container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 60px 24px; /* Đảm bảo padding-top hợp lý */
+}
+
+.festival-card {
+display: flex;
+gap: 24px;
+padding-bottom: 24px;
+margin-bottom: 24px;
+border-bottom: 1px solid var(--border-color, #2c2c2c);
+align-items: flex-start; /* Quan trọng: căn trên cùng */
+}
+
+.festival-card:last-child {
+border-bottom: none;
+}
+
+.card-image-wrapper {
+width: 200px; /* Kích thước ảnh rộng hơn */
+height: 200px; /* Ảnh vuông */
+flex-shrink: 0;
+border-radius: 8px; /* Nếu muốn bo góc như mẫu */
+overflow: hidden;
+}
+
+.card-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.3s ease;
+}
+
+.card-image-wrapper:hover .card-image {
+transform: scale(1.05);
+}
+
+.card-content {
+display: flex;
+flex-direction: column;
+flex-grow: 1; /* Cho phép phần nội dung chiếm hết không gian còn lại */
+}
+
+/* Căn chỉnh tiêu đề và ngày tháng */
+.card-header {
+display: flex;
+justify-content: space-between; /* Đẩy tiêu đề và ngày tháng sang hai bên */
+align-items: center; /* Căn giữa theo chiều dọc */
+margin-bottom: 8px; /* Khoảng cách giữa tiêu đề/ngày tháng và excerpt */
+}
+
+.card-date-full { /* Tên class mới cho ngày tháng */
+font-size: 14px; /* Kích thước nhỏ hơn */
+color: var(--text-secondary, #8e8e8e);
+white-space: nowrap; /* Ngăn không cho ngày tháng bị xuống dòng */
+margin-left: 20px; /* Khoảng cách giữa tiêu đề và ngày tháng */
+}
+
+.card-title {
+font-size: 20px;
+font-weight: 600;
+color: var(--text-primary, #e0e0e0);
+line-height: 1.4;
+text-decoration: none;
+flex-grow: 1; /* Cho phép tiêu đề mở rộng */
+}
+
+.card-title a {
+color: inherit;
+text-decoration: none;
+}
+
+.card-excerpt {
+font-size: 15px;
+color: var(--text-secondary, #b0b0b0); /* Màu tối hơn một chút so với mẫu */
+line-height: 1.6; /* Tăng line-height cho dễ đọc */
+
+/* Giới hạn số dòng, có thể chỉnh để hiển thị nhiều hơn */
+display: -webkit-box;
+-webkit-box-orient: vertical;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+/* Đã xóa .card-read-more */
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+.festival-banner-wrapper {
+height: 350px;
+}
+.festival-list-container {
+padding: 40px 16px;
+}
+.festival-card {
+flex-direction: column;
+align-items: stretch; /* Để ảnh và nội dung giãn ra hết chiều rộng */
+gap: 16px; /* Giảm khoảng cách */
+}
+.card-image-wrapper {
+width: 100%;
+height: 200px;
+}
+
+.card-header {
+flex-direction: column; /* Trên mobile: tiêu đề trên, ngày tháng dưới */
+align-items: flex-start;
+}
+
+.card-date-full {
+margin-left: 0;
+margin-top: 4px; /* Khoảng cách giữa tiêu đề và ngày tháng trên mobile */
+}
+
+.card-title {
+font-size: 18px;
+}
+}

@@ -1,0 +1,69 @@
+.movie-card {
+  cursor: pointer;
+  width: 229px;
+  display: flex;
+  flex-direction: column;
+  height: 378px;
+}
+
+.movie-poster {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--bg-secondary, #1a1a1a);
+}
+
+.movie-poster img {
+  width: 100%;   
+  height: 100%; 
+  object-fit: contain;
+  object-position: top;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.movie-poster:hover img {
+  transform: scale(1.05);
+}
+
+.movie-info {
+  padding-top: 2px;
+}
+
+.movie-genre-date {
+ font-size: 16px;
+ color: var(--text-secondary, #8e8e8e);
+ line-height: 1.4; 
+ min-height: 42px;
+ line-height: 1.2;
+}
+
+.movie-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary, #e0e0e0);
+  line-height: 1.5;
+  display: -webkit-box;
+  height: 42px; 
+}
+
+/* --- NÚT ĐẶT VÉ --- */
+.movie-overlay {
+  position: absolute; 
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent);
+  display: flex; 
+  align-items: flex-end; 
+  justify-content: center;
+  padding: 25px; 
+  opacity: 0; 
+  transition: opacity 0.3s;
+}
+.movie-poster:hover .movie-overlay { opacity: 1; }
+.btn-booking {
+  background: #ef4444;
+  border: none; color: white;
+  padding: 14px 35px; border-radius: 25px;
+  font-weight: 700; font-size: 14px; cursor: pointer;
+  text-transform: uppercase; text-decoration: none;
+}

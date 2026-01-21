@@ -1,0 +1,128 @@
+.promo-card {
+  width: 256px;
+  height: 420px;
+  display: inline-block;
+  padding: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.movie-card {
+  cursor: pointer;
+}
+
+.movie-poster {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.movie-poster:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster img {
+  width: 229px;
+  height: 378px;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.movie-poster:hover img {
+  transform: scale(1.05);
+}
+
+.movie-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 25px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.movie-poster:hover .movie-overlay {
+  opacity: 1;
+}
+
+.btn-booking {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 14px 35px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.btn-booking:hover {
+  background: #dc2626;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+}
+
+.btn-booking:active {
+  transform: scale(1.05);
+}
+
+/* Small Card Variant */
+.movie-card-small .movie-poster img {
+  width: 229px;
+  height: 394px;
+  top: 2580px;
+  left: 80px;
+  opacity: 1;
+  gap: 12;
+
+}
+.movie-card-extra {
+  width: 400px;
+  transform: scale(1.05);
+}
+
+.btn-booking-small {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-booking-small:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .movie-poster img {
+    height: 300px;
+  }
+  
+  .movie-card-small .movie-poster img {
+    height: 220px;
+  }
+  
+  .btn-booking {
+    padding: 12px 28px;
+    font-size: 13px;
+  }
+}
